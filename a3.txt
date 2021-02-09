@@ -1,0 +1,11 @@
+d:
+cd github
+cd finalproject
+git clone https://github.com/aartiwani/finalproject.git                //only for newly created repo
+git init
+git add Online_ExamSystem_BkUp25-1-2021
+git commit -m "Project folder commit sprint1"
+git remote add origin https://github.com/aartiwani/finalproject.git      //only for newly created repo
+git push -u origin master
+git push  origin master
+doskey /history >>a3.txt

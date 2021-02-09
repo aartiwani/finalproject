@@ -1,0 +1,30 @@
+d:
+cd github
+cd temprepo
+cd..
+cd finalproject
+git branch projbranch1
+
+//git checkout --track origin/projbranch1
+//git branch -a -v
+//git fetch origin
+//git checkout --track origin/projbranch1
+//git checkout --track finalproject/projbranch1
+
+cd finalbranch
+cd finalproject
+git checkout
+git remote add origin https://github.com/aartiwani/finalproject.git 
+git checkout projbranch1      //switch branch
+git init
+git add Online_ExamSystem_BkUp25-1-2021
+git commit -m "Project folder commit sprint2"
+git add Online_ExamSystem_BkUp25-1-2021
+git commit -m "Project folder commit sprint1"
+git init
+git add finalproject
+git add Online_ExamSystem_BkUp25-1-2021
+
+git commit -m "Project folder commit sprint1"
+git push -u origin projbranch1
+git push origin projbranch1 doskey /history >>af1.txt
