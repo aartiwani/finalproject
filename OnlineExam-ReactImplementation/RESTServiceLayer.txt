@@ -1,0 +1,115 @@
+POST
+localhost:5000/users/register
+{
+	"prn":202225012051,
+	"fname":"Karna",
+	"lname":"Arjuman",
+	"phone":9802864568,
+	"password":"test@123",
+	"passwordCheck":"test@123"
+
+}
+---------------------------------Response------------------------------------
+{
+  "data": {
+    "msg": "Registered Successfully"
+  }
+}
+----------------------On using Same PRN----------
+{
+  "msg": "PRN already Taken"
+}
+---------------------------------------------------------------------
+localhost:5000/users/register
+{
+	"prn":202225012051,
+	"fname":"Karna",
+	"lname":"Arjuman",
+	"phone":9802864568,
+	"password":"test@123",
+	"passwordCheck":"test@13"
+
+}
+-----------------------------Response-------------------------------------
+{
+  "msg": "Confirmed password Didn'nt match "
+}
+-----------------------------------------------------------------
+localhost:5000/users/register
+{
+	"prn":202225012052,
+	"fname":"Karna",
+	"lname":"Arjuman",
+	"phone":9802864568,
+	"password":"test@123",
+	"passwordCheck":"test@123"
+
+}
+---------------------------------------Response-----------
+{
+  "msg": "Phone number must be unique"
+}
+-----------------------------------------Login ------------------------------------
+http://localhost:5000/users/login
+{
+	"prn":202225012051,
+	"password":"test@123"
+}
+-----------------------------Response------------------------------------------
+{
+  "msg": "Login Successfully",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAyMjI1MDEyMDUxLCJpYXQiOjE2MTA4ODE3OTUsImV4cCI6MTYxODY1Nzc5NX0.SmTJkCPXeBajZrWY7Qmcymop9SOQ0sWiy8U5vfMz6_8",
+  "displayName": "Karna Arjuman",
+  "prn": 202225012051
+}
+-------------------------------------------------------------------------------
+http://localhost:5000/users/login
+{
+	"prn":202225012051,
+	"password":"test@13"
+}
+---------------------------------Response----------------------------
+{
+  "msg": "Wrong password or prn"
+}
+------------------------------------------------------------------------
+http://localhost:5000/users/login
+{
+	"prn":202225012051
+}
+--------------------------Response---------------------
+{
+  "msg": "Please provide a prn and password"
+}
+------------------------------------------------------------
+	***************Get Logged Users**************
+GET
+http://localhost:5000/users/loggedIn
+Header
+x-auth-token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAyMjI1MDEyMDQzLCJpYXQiOjE2MTA0NTY4ODEsImV4cCI6MTYxODIzMjg4MX0.mXJT73Vzt0ENbYKDM8dwn4C16jZfXaV1LQy4RnnU8cA
+-------------------------------------------------------------------------------Response------------------------------
+{
+  "displayName": "Mahesh Mandal",
+  "prn": 202225012043
+}
+-------------------------------------------------------------------------------without header-------------------------------------------
+{
+  "msg": "No authentication token, authorization denied"
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+					***** Is Token Valid*******
+POST
+localhost:5000/users/tokenIsValid
+Header
+x-auth-token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjAyMjI1MDEyMDQzLCJpYXQiOjE2MTA0NTY4ODEsImV4cCI6MTYxODIzMjg4MX0.mXJT73Vzt0ENbYKDM8dwn4C16jZfXaV1LQy4RnnU8cA
+-------------------------------------------------------------------------------Response------------------------------
+{
+  true
+}
+-------------------------------------------------------------------------------without header-------------------------------------------
+{
+  false
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------

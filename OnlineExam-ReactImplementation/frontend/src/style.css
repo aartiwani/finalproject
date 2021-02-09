@@ -1,0 +1,151 @@
+body{
+    background-color: #f2dcbb; 
+}
+#header{
+    height:60px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#ffa62b;
+}
+#header .auth-options{
+    height: 100%;
+    display:flex;
+}
+#header .auth-options button{
+    padding: 0rem 0.5rem;
+    background-color:#c6ebc9;
+    color:#4c5a57;
+    font-size:1.1rem;
+    justify-content:space-between;
+    border:1px none white;
+    margin-right: 5px;
+    margin-left:5px;
+}
+#header.auth-options  button :hover{
+    background-color:red;
+}
+@media screen and (max-width:550px){
+    #header.title{
+        font-size:1.2rem;
+    }
+}
+form{
+    margin-top:0.5%;
+    left:40%;
+    width:25%;
+}
+form > section{
+    display: block;
+}
+input {
+    padding:0.1rem;
+    display: block;
+    width: 18vh;
+    height: 4.5vh
+}
+.error-notice{
+    background-color:#ffabe1;
+    border-radius:8px;
+    border:0.5px solid lightseagreen;
+}
+#homepage{
+    background-image: url("./components/pages/images/Homepage.jpg") ;
+    width:100%;
+    height:430px;
+    margin-top: 7%;
+}
+#footer{
+    height:50px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fad586;
+    position: absolute;
+  left: 
+  0;
+  bottom: 0;
+  width: 100%;  
+  color: white;
+  text-align: center;
+}
+#name {
+    display: inline-block;
+    overflow: hidden;
+    padding:1.5rem;
+    padding-right:2rem;
+    color:rgb(175, 110, 170);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
+    font-style: italic;
+    line-height: 24px;
+    text-align: center;
+    font-weight: normal;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+  }
+#name > span:hover{
+    background-color:greenyellow;
+    outline-style:initial;
+    padding:0.5rem;
+    outline-width: 0.1rem;
+}
+.button.massive{
+    position:relative;
+    margin-left:45%;
+    margin-top:15%;
+}
+#footer > span{
+    color:blueviolet;
+    font-weight: bold;
+    margin-left:50%;
+    font-style: italic;
+}
+#instruction{
+    margin-left:5%;
+}
+#instruction label{
+    padding-top: 0.4rem;
+    padding-right:0.5rem;
+    font-weight: bold;
+}
+#examtopic{
+    margin-left:5%;
+}
+#welcome-msg{
+    margin-left: 3%;
+}
+#instruction input[type=text]{
+    margin-right: 2rem;
+}
+input[type=radio] {
+    border: 0px;
+    width: 100%;
+    height: 1.5em;
+    margin-left:0;
+}
+/* <!-- For header --> */
+header{
+    height: 100px;
+    background-color:#fdffbc;
+    text-align: center;
+    display: inline-block;
+    overflow-block:hidden;
+}
+.Timer{
+    float:left;
+    margin-top: 5px;
+}
+#curTime{
+    margin-right: 5px;
+    float:right;
+}
+.result-center {
+    margin-top:15%;
+    margin-left: 30%;
+    width: 40%;
+
+    border: 3px solid blueviolet;
+    padding: 10px;
+  }
